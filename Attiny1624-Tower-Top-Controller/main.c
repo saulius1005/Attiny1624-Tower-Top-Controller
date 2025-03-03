@@ -24,7 +24,9 @@ int main(void)
 
     while (1) 
     {
-        MT6701_SSI_Angle(); ///< Read MT6701 sensor data
+        MT6701_SSI_Angle(Elevation_Angle); ///< Read MT6701 sensor data
+        _delay_ms(100); ///< Wait 100ms before the next read
+        MT6701_SSI_Angle(Azimuth_Angle); ///< Read MT6701 sensor data
         _delay_ms(100); ///< Wait 100ms before the next read
     }
 }

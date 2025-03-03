@@ -56,13 +56,13 @@ Discarded input sections
                 0x00000000       0x2a ADC.o
  .bss.ReadADC   0x00000000        0x4 ADC.o
  .debug_info    0x00000000      0x563 ADC.o
- .debug_abbrev  0x00000000      0x124 ADC.o
+ .debug_abbrev  0x00000000      0x133 ADC.o
  .debug_loc     0x00000000       0x2d ADC.o
  .debug_aranges
                 0x00000000       0x28 ADC.o
  .debug_ranges  0x00000000       0x18 ADC.o
  .debug_line    0x00000000      0x186 ADC.o
- .debug_str     0x00000000      0x721 ADC.o
+ .debug_str     0x00000000      0x705 ADC.o
  .comment       0x00000000       0x31 ADC.o
  .debug_frame   0x00000000       0x34 ADC.o
  .text          0x00000000        0x0 CLK.o
@@ -358,7 +358,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x4f4
+.text           0x00000000      0x542
  *(.vectors)
  .vectors       0x00000000       0x78 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3/crtattiny1624.o
                 0x00000000                __vector_default
@@ -459,62 +459,62 @@ END GROUP
  .text.GPIO_init
                 0x00000168       0x2e GPIO.o
                 0x00000168                GPIO_init
- .text.main     0x00000196       0x24 main.o
+ .text.main     0x00000196       0x3e main.o
                 0x00000196                main
  .text.MT6701_SSI_Angle
-                0x000001ba       0xd8 MT6701.o
-                0x000001ba                MT6701_SSI_Angle
+                0x000001d4      0x10c MT6701.o
+                0x000001d4                MT6701_SSI_Angle
  .text.USART0_init
-                0x00000292       0x16 USART.o
-                0x00000292                USART0_init
+                0x000002e0       0x16 USART.o
+                0x000002e0                USART0_init
  .text.USART0_sendChar
-                0x000002a8        0xe USART.o
-                0x000002a8                USART0_sendChar
+                0x000002f6        0xe USART.o
+                0x000002f6                USART0_sendChar
  .text.USART0_readChar
-                0x000002b6       0x2e USART.o
-                0x000002b6                USART0_readChar
+                0x00000304       0x2e USART.o
+                0x00000304                USART0_readChar
  .text.avr-libc.fplib
-                0x000002e4        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3.o)
-                0x000002e4                __divsf3
+                0x00000332        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3.o)
+                0x00000332                __divsf3
  .text.avr-libc.fplib
-                0x000002ec       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3x.o)
-                0x0000030c                __divsf3x
-                0x00000312                __divsf3_pse
+                0x0000033a       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3x.o)
+                0x0000035a                __divsf3x
+                0x00000360                __divsf3_pse
  .text.avr-libc.fplib
-                0x000003c8       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(floatsisf.o)
-                0x000003c8                __floatunsisf
-                0x000003cc                __floatsisf
+                0x00000416       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(floatsisf.o)
+                0x00000416                __floatunsisf
+                0x0000041a                __floatsisf
  .text.avr-libc.fplib
-                0x00000442        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_inf.o)
-                0x00000442                __fp_inf
+                0x00000490        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_inf.o)
+                0x00000490                __fp_inf
  .text.avr-libc.fplib
-                0x0000044e        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_nan.o)
-                0x0000044e                __fp_nan
+                0x0000049c        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_nan.o)
+                0x0000049c                __fp_nan
  .text.avr-libc.fplib
-                0x00000454        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_pscA.o)
-                0x00000454                __fp_pscA
+                0x000004a2        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_pscA.o)
+                0x000004a2                __fp_pscA
  .text.avr-libc.fplib
-                0x00000462        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_pscB.o)
-                0x00000462                __fp_pscB
+                0x000004b0        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_pscB.o)
+                0x000004b0                __fp_pscB
  .text.avr-libc.fplib
-                0x00000470       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_round.o)
-                0x00000470                __fp_round
+                0x000004be       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_round.o)
+                0x000004be                __fp_round
  .text.avr-libc.fplib
-                0x00000492       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_split3.o)
-                0x00000492                __fp_split3
-                0x000004a2                __fp_splitA
+                0x000004e0       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_split3.o)
+                0x000004e0                __fp_split3
+                0x000004f0                __fp_splitA
  .text.avr-libc.fplib
-                0x000004d6        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_zero.o)
-                0x000004d6                __fp_zero
-                0x000004d8                __fp_szero
+                0x00000524        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_zero.o)
+                0x00000524                __fp_zero
+                0x00000526                __fp_szero
  .text.avr-libc
-                0x000004e4        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3\libattiny1624.a(ccp_write.o)
-                0x000004e4                ccp_write_io
-                0x000004f0                . = ALIGN (0x2)
+                0x00000532        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3\libattiny1624.a(ccp_write.o)
+                0x00000532                ccp_write_io
+                0x0000053e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000004f0        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
-                0x000004f0                _exit
-                0x000004f0                exit
+ .fini9         0x0000053e        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+                0x0000053e                _exit
+                0x0000053e                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -533,19 +533,19 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000004f0        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
+ .fini0         0x0000053e        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_exit.o)
  *(.fini0)
-                0x000004f4                _etext = .
+                0x00000542                _etext = .
 
-.rodata         0x000084f4       0x40 load address 0x000004f4
+.rodata         0x00008542       0x40 load address 0x00000542
  *(.rodata)
  *(.rodata*)
  .rodata.crc6_table
-                0x000084f4       0x40 CRC.o
-                0x000084f4                crc6_table
+                0x00008542       0x40 CRC.o
+                0x00008542                crc6_table
  *(.gnu.linkonce.r*)
 
-.data           0x00803800        0x0 load address 0x00000534
+.data           0x00803800        0x0 load address 0x00000582
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -554,24 +554,28 @@ END GROUP
                 0x00803800                _edata = .
                 [!provide]                PROVIDE (__data_end, .)
 
-.bss            0x00803800        0xb
+.bss            0x00803800       0x13
                 0x00803800                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.MT6701    0x00803800        0x8 MT6701.o
-                0x00803800                MT6701
- .bss.Status    0x00803808        0x3 USART.o
-                0x00803808                Status
+ .bss.MT6701AZIMUTH
+                0x00803800        0x8 MT6701.o
+                0x00803800                MT6701AZIMUTH
+ .bss.MT6701ELEVATION
+                0x00803808        0x8 MT6701.o
+                0x00803808                MT6701ELEVATION
+ .bss.Status    0x00803810        0x3 USART.o
+                0x00803810                Status
  *(COMMON)
-                0x0080380b                PROVIDE (__bss_end, .)
-                0x00000534                __data_load_start = LOADADDR (.data)
-                0x00000534                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00803813                PROVIDE (__bss_end, .)
+                0x00000582                __data_load_start = LOADADDR (.data)
+                0x00000582                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080380b        0x0
+.noinit         0x00803813        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080380b                _end = .
+                0x00803813                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -661,38 +665,38 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x2e77
+.debug_info     0x00000000     0x2f3f
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x1b84 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3/crtattiny1624.o
  .debug_info    0x00001b84      0x2e2 CLK.o
  .debug_info    0x00001e66      0x14b CRC.o
  .debug_info    0x00001fb1      0x335 GPIO.o
- .debug_info    0x000022e6      0x16e main.o
- .debug_info    0x00002454      0x48a MT6701.o
- .debug_info    0x000028de      0x4fa USART.o
- .debug_info    0x00002dd8       0x9f C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3\libattiny1624.a(ccp_write.o)
+ .debug_info    0x000022e6      0x1db main.o
+ .debug_info    0x000024c1      0x4e5 MT6701.o
+ .debug_info    0x000029a6      0x4fa USART.o
+ .debug_info    0x00002ea0       0x9f C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3\libattiny1624.a(ccp_write.o)
 
-.debug_abbrev   0x00000000     0x20fc
+.debug_abbrev   0x00000000     0x218b
  *(.debug_abbrev)
  .debug_abbrev  0x00000000     0x1a0e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3/crtattiny1624.o
  .debug_abbrev  0x00001a0e       0xe5 CLK.o
  .debug_abbrev  0x00001af3       0xc0 CRC.o
  .debug_abbrev  0x00001bb3       0xbc GPIO.o
- .debug_abbrev  0x00001c6f       0xe6 main.o
- .debug_abbrev  0x00001d55      0x172 MT6701.o
- .debug_abbrev  0x00001ec7      0x221 USART.o
- .debug_abbrev  0x000020e8       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3\libattiny1624.a(ccp_write.o)
+ .debug_abbrev  0x00001c6f      0x134 main.o
+ .debug_abbrev  0x00001da3      0x1b3 MT6701.o
+ .debug_abbrev  0x00001f56      0x221 USART.o
+ .debug_abbrev  0x00002177       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3\libattiny1624.a(ccp_write.o)
 
-.debug_line     0x00000000      0xb0f
+.debug_line     0x00000000      0xb53
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x14b C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3/crtattiny1624.o
  .debug_line    0x0000014b      0x1b4 CLK.o
  .debug_line    0x000002ff       0xd4 CRC.o
  .debug_line    0x000003d3      0x13e GPIO.o
- .debug_line    0x00000511      0x138 main.o
- .debug_line    0x00000649      0x1a7 MT6701.o
- .debug_line    0x000007f0      0x2b8 USART.o
- .debug_line    0x00000aa8       0x67 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3\libattiny1624.a(ccp_write.o)
+ .debug_line    0x00000511      0x15e main.o
+ .debug_line    0x0000066f      0x1c5 MT6701.o
+ .debug_line    0x00000834      0x2b8 USART.o
+ .debug_line    0x00000aec       0x67 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3\libattiny1624.a(ccp_write.o)
 
 .debug_frame    0x00000000      0x1ac
  *(.debug_frame)
@@ -703,7 +707,7 @@ END GROUP
  .debug_frame   0x000000c4       0x40 MT6701.o
  .debug_frame   0x00000104       0xa8 USART.o
 
-.debug_str      0x00000000     0x1665
+.debug_str      0x00000000     0x16b8
  *(.debug_str)
  .debug_str     0x00000000      0xbcd C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/2.0.368/gcc/dev/attiny1624/avrxmega3/crtattiny1624.o
  .debug_str     0x00000bcd      0x3c5 CLK.o
@@ -712,18 +716,19 @@ END GROUP
                                 0x203 (size before relaxing)
  .debug_str     0x00000fea      0x235 GPIO.o
                                 0x3fd (size before relaxing)
- .debug_str     0x0000121f       0x69 main.o
-                                0x230 (size before relaxing)
- .debug_str     0x00001288      0x118 MT6701.o
-                                0x3b4 (size before relaxing)
- .debug_str     0x000013a0      0x2c5 USART.o
+ .debug_str     0x0000121f       0x87 main.o
+                                0x24e (size before relaxing)
+ .debug_str     0x000012a6      0x14d MT6701.o
+                                0x407 (size before relaxing)
+ .debug_str     0x000013f3      0x2c5 USART.o
                                 0x562 (size before relaxing)
 
-.debug_loc      0x00000000      0x2a6
+.debug_loc      0x00000000      0x367
  *(.debug_loc)
  .debug_loc     0x00000000       0xad CRC.o
- .debug_loc     0x000000ad       0x81 MT6701.o
- .debug_loc     0x0000012e      0x178 USART.o
+ .debug_loc     0x000000ad       0x48 main.o
+ .debug_loc     0x000000f5       0xfa MT6701.o
+ .debug_loc     0x000001ef      0x178 USART.o
 
 .debug_macinfo
  *(.debug_macinfo)

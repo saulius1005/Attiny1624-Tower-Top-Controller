@@ -10,8 +10,8 @@
 #define ADCVAR_H_
 
 ADC_VALUES ReadADC = {
-.elevationAngle = 0,
-.azimuthAngle = 0
+.SCI = 0,
+.SCU = 0
 };
 
 

@@ -64,6 +64,6 @@ uint8_t MT6701CRC(uint32_t *data);
 /**
  * @brief Reads angle data from the MT6701 sensor using SSI protocol.
  */
-void MT6701_SSI_Angle();
+void MT6701_SSI_Angle(angleChannel_t channel);
 
 #endif /* SETTINGS_H_ */

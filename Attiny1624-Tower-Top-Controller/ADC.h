@@ -12,8 +12,8 @@
 #define TIMEBASE_VALUE ((uint8_t) ceil(F_CPU*0.000001)) //ADC time base
 
 typedef struct {
-	uint16_t elevationAngle;
-	uint16_t azimuthAngle;
+	uint16_t SCU;
+	uint16_t SCI;
 } ADC_VALUES;
 
 extern ADC_VALUES ReadADC;

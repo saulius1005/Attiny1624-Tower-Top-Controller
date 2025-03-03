@@ -23,9 +23,15 @@ typedef struct {
     uint8_t CRCError;             ///< CRC error flag (0 = valid, 1 = error detected)
 } AngleSensorStatus;
 
+typedef enum {
+	Elevation_Angle = PIN7_bm,
+	Azimuth_Angle = PIN6_bm
+} angleChannel_t;
+
 /**
  * @brief Global variable to store the latest MT6701 sensor data.
  */
-extern AngleSensorStatus MT6701;
+extern AngleSensorStatus MT6701ELEVATION;
+extern AngleSensorStatus MT6701AZIMUTH;
 
 #endif /* MT6701_H_ */
