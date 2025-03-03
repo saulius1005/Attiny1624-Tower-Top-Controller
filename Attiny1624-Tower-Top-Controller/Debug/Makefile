@@ -43,7 +43,8 @@ C_SRCS +=  \
 ../GPIO.c \
 ../main.c \
 ../MT6701.c \
-../USART.c
+../USART.c \
+../Yswitches.c
 
 
 PREPROCESSING_SRCS += 
@@ -59,7 +60,8 @@ CRC.o \
 GPIO.o \
 main.o \
 MT6701.o \
-USART.o
+USART.o \
+Yswitches.o
 
 OBJS_AS_ARGS +=  \
 ADC.o \
@@ -68,7 +70,8 @@ CRC.o \
 GPIO.o \
 main.o \
 MT6701.o \
-USART.o
+USART.o \
+Yswitches.o
 
 C_DEPS +=  \
 ADC.d \
@@ -77,7 +80,8 @@ CRC.d \
 GPIO.d \
 main.d \
 MT6701.d \
-USART.d
+USART.d \
+Yswitches.d
 
 C_DEPS_AS_ARGS +=  \
 ADC.d \
@@ -86,7 +90,8 @@ CRC.d \
 GPIO.d \
 main.d \
 MT6701.d \
-USART.d
+USART.d \
+Yswitches.d
 
 OUTPUT_FILE_PATH +=Attiny1624-Tower-Top-Controller.elf
 
@@ -145,6 +150,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 ./USART.o: .././USART.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\2.0.368\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=attiny1624 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\2.0.368\gcc\dev\attiny1624" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./Yswitches.o: .././Yswitches.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\2.0.368\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=attiny1624 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\2.0.368\gcc\dev\attiny1624" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

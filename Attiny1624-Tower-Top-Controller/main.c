@@ -15,18 +15,32 @@
  *
  * @return int (not used, since the function never exits).
  */
+
 int main(void)
 {
 	//CLOCK_XOSCHF_clock_init(); 
     CLOCK_INHF_clock_init(); ///< Initialize system clock
     GPIO_init(); ///< Initialize GPIO pins
     USART0_init(); ///< Initialize USART0 for SPI communication
+	USART1_init();
 
     while (1) 
     {
         MT6701_SSI_Angle(Elevation_Angle); ///< Read MT6701 sensor data
         _delay_ms(100); ///< Wait 100ms before the next read
         MT6701_SSI_Angle(Azimuth_Angle); ///< Read MT6701 sensor data
+
+		uint8_t y = YEndSwitches();
+		uint64_t combined = ((uint64_t)MT6701ELEVATION.Angle << 40) | ((uint64_t)MT6701AZIMUTH.Angle << 24) | ((uint32_t)ReadADC.SCU << 12) | ((uint16_t)ReadADC.SCI << 4) | y;
+
         _delay_ms(100); ///< Wait 100ms before the next read
+		        // Send the combined data over USART0 in a formatted string
+		        USART1_printf("<%04x%04x%03x%02x%x%02x>\r\n",
+		        (uint16_t)MT6701ELEVATION.Angle,           ///< Elevation angle (4 digits)
+		        (uint16_t)MT6701AZIMUTH.Angle,           ///< Azimuth angle (4 digits)
+		        (uint16_t)ReadADC.SCU,           ///< Voltage (3 digits)
+		        (uint8_t)ReadADC.SCI,            ///< Current (2 digits)
+		        (uint8_t)y,            ///< End switch status (1 digit)
+		        (uint8_t)crc8_cdma2000(combined)); ///< CRC value (1 byte)
     }
 }

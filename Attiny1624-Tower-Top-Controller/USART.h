@@ -13,6 +13,7 @@
  * @brief Macro to calculate USART baud rate in synchronous mode as Host SPI.
  * @param BAUD_RATE Desired baud rate.
  */
+
 #define USART0_BAUD_RATE(BAUD_RATE) ((float)(F_CPU / (2 * (float)BAUD_RATE / 64)) + 0.5) //synchronous mode as Host SPI
 #define USART1_BAUD_RATE(BAUD_RATE) ((float)(F_CPU * 64 / (8 *(float)BAUD_RATE)) + 0.5) // double speed
 

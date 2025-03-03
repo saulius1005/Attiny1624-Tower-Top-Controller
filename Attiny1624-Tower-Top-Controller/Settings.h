@@ -9,6 +9,9 @@
 #define SETTINGS_H_
 
 #define F_CPU 20000000
+/*
+#define USART0_BAUD 500000 //change this according your desires for USART0 (HOST SPI)
+#define USART1_BAUD 500000 //change this according your desires for USART1 (USART LED TX)*/
 
 #include <avr/io.h>
 #include <avr/cpufunc.h>
@@ -31,13 +34,6 @@ void GPIO_init();
 void CLOCK_INHF_clock_init();
 
 /**
- * @brief Computes CRC for a given command.
- * @param command 32-bit input data for CRC calculation.
- * @return Computed CRC value.
- */
-uint8_t CRC(uint32_t command);
-
-/**
  * @brief Initializes USART0 for SPI communication.
  */
 void USART0_init();
@@ -54,6 +50,10 @@ void USART0_sendChar(char c);
  */
 char USART0_readChar();
 
+void USART1_init();
+
+void USART1_printf(const char *format, ...);
+
 /**
  * @brief Verifies and removes CRC from received MT6701 sensor data.
  * @param data Pointer to the 32-bit sensor data.
@@ -65,5 +65,18 @@ uint8_t MT6701CRC(uint32_t *data);
  * @brief Reads angle data from the MT6701 sensor using SSI protocol.
  */
 void MT6701_SSI_Angle(angleChannel_t channel);
+
+/**
+ * @brief Calculates the CRC-8 CDMA2000 checksum.
+ * 
+ * This function calculates the CRC-8 CDMA2000 checksum for the provided data using 
+ * the CDMA2000 polynomial.
+ * 
+ * @param data The 64-bit data to calculate the CRC checksum for.
+ * @return The calculated CRC-8 checksum value.
+ */
+uint8_t crc8_cdma2000(uint64_t data);
+
+ uint8_t YEndSwitches();
 
 #endif /* SETTINGS_H_ */
