@@ -37,5 +37,5 @@ void MT6701_SSI_Angle(angleChannel_t channel) {
 	    sensor->MagneticFieldStatus = received_data & 0x3;  // Extract magnetic field status
 	    sensor->PushButtonStatus = (received_data >> 2) & 0x1;  // Extract push button status
 	    sensor->TrackStatus = (received_data >> 3) & 0x1;  // Extract track status
-	    sensor->Angle = (double)(received_data >> 4) / 45.51111111;  // Compute angle in degrees
+	    sensor->Angle = ((double)(received_data >> 4) / 0.4551111111)+0.5;  // Compute angle in degrees
 }

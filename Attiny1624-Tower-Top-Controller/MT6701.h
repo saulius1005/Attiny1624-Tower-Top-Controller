@@ -16,7 +16,7 @@
  * push button status, track status, and CRC error flag.
  */
 typedef struct {
-    double Angle;                 ///< Measured angle in degrees
+    uint16_t Angle;               ///< Measured angle in degrees
     uint8_t MagneticFieldStatus;  ///< Magnetic field status (validity flag)
     uint8_t PushButtonStatus;     ///< Push button status (if applicable)
     uint8_t TrackStatus;          ///< Tracking status
