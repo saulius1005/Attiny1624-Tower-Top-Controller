@@ -32,15 +32,16 @@ int main(void)
 		ReadSolarCells(Voltage);
 		ReadSolarCells(Current);
 		uint8_t y = YEndSwitches();
-		uint64_t combined = ((uint64_t)MT6701ELEVATION.Angle << 40) | ((uint64_t)MT6701AZIMUTH.Angle << 24) | ((uint32_t)ReadVoltage.Result << 12) | ((uint16_t)ReadCurrent.Result << 4) | y;
+		uint64_t combined = ((uint64_t)MT6701ELEVATION.Angle << 44) | ((uint64_t)MT6701AZIMUTH.Angle << 28) | ((uint64_t)ReadVoltage.Result << 16) | ((uint32_t)ReadCurrent.Result << 4) | y;
+
 
 
 		        // Send the combined data over USART0 in a formatted string
-		        USART1_printf("<%04x%04x%03x%02x%x%02x>\r\n",
+		        USART1_printf("<%04x%04x%03x%03x%x%02x>\r\n",
 		        (uint16_t)MT6701ELEVATION.Angle,           ///< Elevation angle (4 digits)
 		        (uint16_t)MT6701AZIMUTH.Angle,           ///< Azimuth angle (4 digits)
 		        (uint16_t)ReadVoltage.Result,           ///< Voltage (3 digits)
-		        (uint8_t)ReadCurrent.Result,            ///< Current (2 digits)
+		        (uint16_t)ReadCurrent.Result,            ///< Current (3 digits)
 		        (uint8_t)y,            ///< End switch status (1 digit)
 		        (uint8_t)crc8_cdma2000(combined)); ///< CRC value (1 byte)
         _delay_ms(100); ///< Wait 100ms before the next read
