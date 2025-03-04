@@ -33,21 +33,21 @@ void ReadSolarCells(solarrcells_t channel){
 
 	ADC0.MUXPOS = channel;
 	
-	ADC0.CTRLC |= ADC_REFSEL_1024MV_gc;  // 1.024V 
-	if(ADC0_Read()== 0xfff){
-		ADC0.CTRLC |= ADC_REFSEL_2048MV_gc; //2.048V
-		if (ADC0_Read()== 0xfff){
-			ADC0.CTRLC |= ADC_REFSEL_4096MV_gc; //4.096V
-			if(ADC0_Read()== 0xfff){ //this is more less actual limit of SLS but still
-				ADC0.CTRLC |= ADC_REFSEL_VDD_gc; //ref voltage is 5V (TMC1100a4 = 400mV/A min: 0.125A, max: 12A), sollar cells max is ScI 10.64A+-3% ~11A, 11 * 0.4 = 4.4V > 4.096Vref
-				voltageORcurrent->Result = (ADC0_Read()/1.25)+0.5; //Assume Vdd is 5.0V. 1.25 same as /12.5 * 10
+	ADC0.CTRLC = (ADC0.CTRLC & ~ADC_REFSEL_gm) | ADC_REFSEL_1024MV_gc;  // 1.024V 
+	if(ADC0_Read()>= 0xff0){ //if more or equal to 4080 ADC steps
+		ADC0.CTRLC = (ADC0.CTRLC & ~ADC_REFSEL_gm) | ADC_REFSEL_2048MV_gc; //2.048V
+		if (ADC0_Read()>= 0xff0){
+			ADC0.CTRLC = (ADC0.CTRLC & ~ADC_REFSEL_gm) | ADC_REFSEL_4096MV_gc; //4.096V
+			if(ADC0_Read()>= 0xff0){
+				ADC0.CTRLC = (ADC0.CTRLC & ~ADC_REFSEL_gm) | ADC_REFSEL_VDD_gc; //ref voltage is 5V (TMC1100a4 = 400mV/A min: 0.125A, max: 12A), sollar cells max is ScI 10.64A+-3% ~11A, 11 * 0.4 = 4.4V > 4.096Vref
+				voltageORcurrent->Result = (float)ADC0_Read()/32.768; //Assume Vdd is 5.0V. 32.768 same as /327.68 * 10
 			}
 			else
-			voltageORcurrent->Result = (ADC0_Read()/1.024)+0.5;
+			voltageORcurrent->Result = (float)ADC0_Read()/40;
 		}
 		else
-		voltageORcurrent->Result = (ADC0_Read()/0.512)+0.5;
+		voltageORcurrent->Result = (float)ADC0_Read()/80;
 	}
 	else
-	voltageORcurrent->Result = (ADC0_Read()/0.256)+0.5;  // Read ADC value, scale it, and round the result
+	voltageORcurrent->Result = (float)ADC0_Read()/160;  // Read ADC value, scale it, and round the result
 }
