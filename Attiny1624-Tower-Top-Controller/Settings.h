@@ -77,6 +77,10 @@ void MT6701_SSI_Angle(angleChannel_t channel);
  */
 uint8_t crc8_cdma2000(uint64_t data);
 
- uint8_t YEndSwitches();
+uint8_t YEndSwitches();
+
+void ADC0_init();
+
+void ReadSolarCells(solarrcells_t channel);
 
 #endif /* SETTINGS_H_ */

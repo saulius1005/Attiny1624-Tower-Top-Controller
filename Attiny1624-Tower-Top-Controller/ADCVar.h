@@ -9,10 +9,11 @@
 #ifndef ADCVAR_H_
 #define ADCVAR_H_
 
-ADC_VALUES ReadADC = {
-.SCI = 0,
-.SCU = 0
+ADC_VALUES ReadCurrent = {
+	.Result = 0
 };
-
+ADC_VALUES ReadVoltage = {
+	.Result = 0
+};
 
 #endif /* ADCVAR_H_ */

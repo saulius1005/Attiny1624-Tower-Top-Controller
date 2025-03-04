@@ -7,15 +7,6 @@
 
 #include "Settings.h"
 
-/**
- * @brief Initializes GPIO pins for USART0 SPI communication with the MT6701 sensor.
- *
- * Configures:
- * - PB1 as XCK (MT6701 CLK) output.
- * - PB2 as TX for dummy data sending with pull-up enabled.
- * - PB3 as RX (MISO, MT6701 DO) with pull-up enabled.
- * - PA7 as SS (MT6701 CSN) output, initially set high.
- */
 void GPIO_init(){
     PORTMUX.USARTROUTEA = PORTMUX_USART0_DEFAULT_gc | PORTMUX_USART1_DEFAULT_gc; ///< Set USART0 and UASRT1 to default pins
 
