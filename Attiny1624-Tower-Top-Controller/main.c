@@ -29,7 +29,9 @@ int main(void)
     {
         MT6701_SSI_Angle(Elevation_Angle); ///< Read MT6701 sensor data
         MT6701_SSI_Angle(Azimuth_Angle); ///< Read MT6701 sensor data
+		_delay_ms(10);
 		ReadSolarCells(Voltage);
+		_delay_ms(10);
 		ReadSolarCells(Current);
 		uint8_t y = YEndSwitches();
 		uint64_t combined = ((uint64_t)MT6701ELEVATION.Angle << 44) | ((uint64_t)MT6701AZIMUTH.Angle << 28) | ((uint64_t)ReadVoltage.Result << 16) | ((uint32_t)ReadCurrent.Result << 4) | y;
