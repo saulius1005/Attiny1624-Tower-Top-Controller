@@ -29,12 +29,12 @@ int main(void)
     {
         MT6701_SSI_Angle(Elevation_Angle); ///< Read MT6701 sensor data
         MT6701_SSI_Angle(Azimuth_Angle); ///< Read MT6701 sensor data
-		_delay_ms(10);
-		ReadSolarCells(Voltage);
-		_delay_ms(10);
-		ReadSolarCells(Current);
+		//ReadSolarCells(Voltage); //uncomment if filtration no needded
+		//ReadSolarCells(Current); //uncomment if filtration no needded
+		FIR(Voltage); //comment if using ReadSolarCells(Voltage);
+		FIR(Current); //comment if using ReadSolarCells(Current);
 		uint8_t y = YEndSwitches();
-		uint64_t combined = ((uint64_t)MT6701ELEVATION.Angle << 44) | ((uint64_t)MT6701AZIMUTH.Angle << 28) | ((uint64_t)ReadVoltage.Result << 16) | ((uint32_t)ReadCurrent.Result << 4) | y;
+		uint8_t crc8 = crc8_cdma2000(((uint64_t)MT6701ELEVATION.Angle << 44) | ((uint64_t)MT6701AZIMUTH.Angle << 28) | ((uint64_t)ReadVoltage.Result << 16) | ((uint32_t)ReadCurrent.Result << 4) | y);
 
 
 
@@ -45,7 +45,7 @@ int main(void)
 		        (uint16_t)ReadVoltage.Result,           ///< Voltage (3 digits)
 		        (uint16_t)ReadCurrent.Result,            ///< Current (3 digits)
 		        (uint8_t)y,            ///< End switch status (1 digit)
-		        (uint8_t)crc8_cdma2000(combined)); ///< CRC value (1 byte)
-        _delay_ms(100); ///< Wait 100ms before the next read
+		        (uint8_t)crc8); ///< CRC value (1 byte)
+        _delay_ms(100); ///< Wait 100ms before the next write
     }
 }

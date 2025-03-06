@@ -10,10 +10,14 @@
 #define ADCVAR_H_
 
 ADC_VALUES ReadCurrent = {
-	.Result = 0
+	.Result = 0,
+	.Filter={0},
+	.index = 0
 };
 ADC_VALUES ReadVoltage = {
-	.Result = 0
+	.Result = 0,
+	.Filter={0},
+	.index = 0
 };
 
 #endif /* ADCVAR_H_ */

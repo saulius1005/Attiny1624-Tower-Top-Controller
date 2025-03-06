@@ -20,6 +20,7 @@
 #include <stdio.h> 
 #include <string.h> 
 #include "ADC.h"
+#include "FIR.h"
 #include "USART.h"
 #include "MT6701.h"
 
@@ -82,5 +83,7 @@ uint8_t YEndSwitches();
 void ADC0_init();
 
 void ReadSolarCells(solarrcells_t channel);
+
+void FIR(solarrcells_t channel);
 
 #endif /* SETTINGS_H_ */

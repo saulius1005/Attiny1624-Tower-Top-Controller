@@ -13,6 +13,8 @@
 
 typedef struct {
 	uint16_t Result;
+	uint16_t Filter[50];
+	uint8_t index;
 } ADC_VALUES;
 
 typedef enum {

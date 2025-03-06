@@ -8,6 +8,8 @@ CLK.c
 
 CRC.c
 
+Filter.c
+
 GPIO.c
 
 main.c

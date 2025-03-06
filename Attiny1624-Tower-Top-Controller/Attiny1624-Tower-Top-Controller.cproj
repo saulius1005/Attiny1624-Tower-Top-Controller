@@ -151,6 +151,12 @@
     <Compile Include="CRC.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Filter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FIR.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="GPIO.c">
       <SubType>compile</SubType>
     </Compile>

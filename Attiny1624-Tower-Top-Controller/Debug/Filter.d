@@ -1,4 +1,4 @@
-ADC.d ADC.o: .././ADC.c .././Settings.h \
+Filter.d Filter.o: .././Filter.c .././Settings.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -20,7 +20,7 @@ ADC.d ADC.o: .././ADC.c .././Settings.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
- .././ADC.h .././FIR.h .././USART.h .././MT6701.h .././ADCVar.h
+ .././ADC.h .././FIR.h .././USART.h .././MT6701.h
 
 .././Settings.h:
 
@@ -73,5 +73,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././USART.h:
 
 .././MT6701.h:
-
-.././ADCVar.h:
