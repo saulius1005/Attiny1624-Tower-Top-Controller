@@ -9,9 +9,6 @@
 #define SETTINGS_H_
 
 #define F_CPU 20000000
-/*
-#define USART0_BAUD 500000 //change this according your desires for USART0 (HOST SPI)
-#define USART1_BAUD 500000 //change this according your desires for USART1 (USART LED TX)*/
 
 #include <avr/io.h>
 #include <avr/cpufunc.h>
@@ -19,8 +16,9 @@
 #include <stdlib.h>
 #include <stdio.h> 
 #include <string.h> 
-#include "ADC.h"
+#include <math.h>
 #include "FIR.h"
+#include "ADC.h"
 #include "USART.h"
 #include "MT6701.h"
 
@@ -28,6 +26,11 @@
  * @brief Initializes general-purpose input/output (GPIO) settings.
  */
 void GPIO_init();
+
+/**
+ * @brief Initializes the external high-frequency clock.
+ */
+void CLOCK_XOSCHF_clock_init();
 
 /**
  * @brief Initializes the internal high-frequency clock.

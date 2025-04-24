@@ -9,6 +9,7 @@
 #ifndef FIR_H_
 #define FIR_H_
 
-#define FIR_STEPS 50 //More steps meaning better filtration but slower signal response
+#define FIR_STEPS 20 //More steps meaning better filtration but slower signal response
+
 
 #endif /* FIR_H_ */

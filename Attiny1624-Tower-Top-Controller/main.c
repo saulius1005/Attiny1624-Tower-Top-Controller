@@ -18,8 +18,8 @@
 
 int main(void)
 {
-	//CLOCK_XOSCHF_clock_init(); 
-    CLOCK_INHF_clock_init(); ///< Initialize system clock
+	CLOCK_XOSCHF_clock_init(); ///< Initialize exteral system clock
+    //CLOCK_INHF_clock_init(); 
     GPIO_init(); ///< Initialize GPIO pins
     USART0_init(); ///< Initialize USART0 for SPI communication
 	USART1_init();
@@ -27,6 +27,8 @@ int main(void)
 
     while (1) 
     {
+		//Test for extenal- internal clock
+		//PORTA.OUTTGL = PIN1_bm;
         MT6701_SSI_Angle(Elevation_Angle); ///< Read MT6701 sensor data
         MT6701_SSI_Angle(Azimuth_Angle); ///< Read MT6701 sensor data
 		//ReadSolarCells(Voltage); //uncomment if filtration no needded
@@ -35,8 +37,6 @@ int main(void)
 		FIR(Current); //comment if using ReadSolarCells(Current);
 		uint8_t y = YEndSwitches();
 		uint8_t crc8 = crc8_cdma2000(((uint64_t)MT6701ELEVATION.Angle << 44) | ((uint64_t)MT6701AZIMUTH.Angle << 28) | ((uint64_t)ReadVoltage.Result << 16) | ((uint32_t)ReadCurrent.Result << 4) | y);
-
-
 
 		        // Send the combined data over USART0 in a formatted string
 		        USART1_printf("<%04x%04x%03x%03x%x%02x>\r\n",
@@ -47,5 +47,6 @@ int main(void)
 		        (uint8_t)y,            ///< End switch status (1 digit)
 		        (uint8_t)crc8); ///< CRC value (1 byte)
         _delay_ms(100); ///< Wait 100ms before the next write
+
     }
 }

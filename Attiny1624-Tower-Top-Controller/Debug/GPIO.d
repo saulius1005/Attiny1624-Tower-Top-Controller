@@ -20,7 +20,7 @@ GPIO.d GPIO.o: .././GPIO.c .././Settings.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
- .././ADC.h .././FIR.h .././USART.h .././MT6701.h
+ .././FIR.h .././ADC.h .././USART.h .././MT6701.h
 
 .././Settings.h:
 
@@ -66,9 +66,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h:
 
-.././ADC.h:
-
 .././FIR.h:
+
+.././ADC.h:
 
 .././USART.h:
 
