@@ -36,7 +36,7 @@ The hardware setup includes external connections for the MT6701 sensors and inte
 The data is transmitted with the following format:
 
 ```
-<EEEEAAAAVVVCCCYX>
+<EEEEAAAAVVVCCCYXX>
 ```
 **Where:**
 
@@ -50,7 +50,7 @@ The data is transmitted with the following format:
 
 * **Y** – End switch state
 
-* **X** – CRC-8 checksum
+* **XX** – CRC-8 checksum
 
 The data is sent over USART1 at 500,000 baud. The baud rate can be adjusted in the ```USART.c``` file:
 ```
