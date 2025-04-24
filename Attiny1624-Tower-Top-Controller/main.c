@@ -45,7 +45,7 @@ int main(void)
 		        (uint16_t)ReadVoltage.Result,           ///< Voltage (3 digits)
 		        (uint16_t)ReadCurrent.Result,            ///< Current (3 digits)
 		        (uint8_t)y,            ///< End switch status (1 digit)
-		        (uint8_t)crc8); ///< CRC value (1 byte)
+		        (uint8_t)crc8); ///< CRC value (2 digits)
         _delay_ms(100); ///< Wait 100ms before the next write
 
     }
