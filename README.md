@@ -62,7 +62,7 @@ FIR Filtering: The level of FIR filtering applied to the voltage and current mea
 ```
 #define FIR_STEPS 20
 ```
-USART0 Baud Rate: The baud rate for USART0 communication is set to 500,000 by default, but can be modified in the ```USART.c``` file:
+USART0 Baud Rate: The baud rate for USART0 communication is set to 500,000 by default (used as SSI interface for MT6701), but can be modified in the ```USART.c``` file:
 
 ```
 USART0.BAUD = (uint16_t)USART0_BAUD_RATE(500000);
