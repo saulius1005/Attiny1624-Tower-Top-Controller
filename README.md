@@ -2,7 +2,7 @@
 
 # Attiny1624 Tower Top Controller
 
-This project is designed for the **Attiny1624** microcontroller, which communicates with an external 20 MHz clock generator and handles multiple sensor measurements, including solar cell voltage and current, as well as angular data from MT6701 sensors. The program also performs data validation via CRC checks and transmits the data over a communication interface. These data are then transmitted via fiber optics for further processing by the main solar tower control PCB.
+This project is designed for the **Attiny1624** microcontroller, which communicates with an external 20 MHz clock generator (TCXO) and handles multiple sensor measurements, including solar cell voltage and current, as well as angular data from MT6701 sensors. The program also performs data validation via CRC checks and transmits the data over a communication interface. These data are then transmitted via fiber optics for further processing by the main solar tower control PCB.
 
 ## Features
 
