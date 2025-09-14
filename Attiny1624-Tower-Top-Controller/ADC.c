@@ -48,26 +48,17 @@ uint16_t ADC0_Read(uint8_t channel) {
 	return ADC0.SAMPLE; ///< Return averaged result
 }
 
-/**
- * @brief Reads either voltage or current from a solar cell based on the selected channel.
- *
- * - For current: Uses internal 1.024V reference to measure VDD/10, calculates true range for TMCS1100 sensor,
- *   then reads current with VDD as reference and applies correction.
- * - For voltage: Uses 2.048V reference for AMC1311-based voltage sensor and applies scaling.
- *
- * @param channel Selects between voltage and current input channels.
- */
 void ReadSolarCells(solarrcells_t channel) {
 	ADC_VALUES *voltageORcurrent = (channel == Voltage) ? &ReadVoltage : &ReadCurrent;
 
 	if (channel == Current) {
 		// Current measurement depends on MCU VDD; we need to measure VDD to calibrate range.
 		ADC0.CTRLC = (ADC0.CTRLC & ~ADC_REFSEL_gm) | ADC_REFSEL_1024MV_gc;
-		float mcuVoltage = 0.0025 * ADC0_Read(ADC_MUXPOS_VDDDIV10_gc); ///< VDD = 10 × ADC result × 1.024 / 4096
-		uint16_t tmc1100Range = round(mcuVoltage * 250); ///< Calibrated TMCS1100 range depending on VDD
+		float mcuVoltage = 0.25 * ADC0_Read(ADC_MUXPOS_VDDDIV10_gc); ///< VDD = 10 × ADC result × 1.024 / 4096
+		float koef = mcuVoltage / 409.6;
 		ADC0.CTRLC = (ADC0.CTRLC & ~ADC_REFSEL_gm) | ADC_REFSEL_VDD_gc;
-		uint16_t current = ((float)tmc1100Range / 4096) * ADC0_Read(channel);
-		voltageORcurrent->Result = current > TMCS1100_ZERO_I ? current - TMCS1100_ZERO_I : current;
+		uint16_t current = abs((ADC0_Read(channel)*koef/4)-12); //-0,125A
+		voltageORcurrent->Result = current /*> TMCS1100_ZERO_I ? current - TMCS1100_ZERO_I : current*/;
 	}
 	else {
 		// Voltage measurement uses a fixed 2.048V reference, independent of VDD.

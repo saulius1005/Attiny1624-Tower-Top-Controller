@@ -7,5 +7,5 @@
  #include "Settings.h"
 
  uint8_t YEndSwitches(){
-	return (!(PORTB.IN & PIN0_bm)) | ((!(PORTA.IN & PIN2_bm)) << 1); // Checking Y min and max values (PB0 and PA2 values) and it will be 0,1,2,3
+	return (!(PORTA.IN & PIN5_bm)) | ((!(PORTA.IN & PIN4_bm)) << 1); // Checking Y min and max values (PB0 and PA2 values) and it will be 0,1,2,3
  } 
