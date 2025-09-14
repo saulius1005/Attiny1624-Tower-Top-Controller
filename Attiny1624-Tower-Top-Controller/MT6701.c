@@ -18,11 +18,15 @@
  */
 void MT6701_SSI_Angle(angleChannel_t channel) {
     uint32_t received_data = 0;
-
+	uint32_t timeout = 1000;
     PORTA.OUTCLR = channel; ///< Pull CSN low to start communication   
     for (uint8_t i = 0; i < 3; i++) { ///< 3 bytes (24 bits) of data
         USART0_sendChar('o'); ///< Send dummy data (8 bits) for clock generation
-		while (!(USART0.STATUS & USART_TXCIF_bm)) {} ///< Repeat until the full frame is received
+		while (!(USART0.STATUS & USART_TXCIF_bm)) {
+			if (--timeout == 0) { // Timeout condition
+				break;
+			}
+		} ///< Repeat until the full frame is received
 		USART0.STATUS |= USART_TXCIF_bm; ///< Clear frame flag before data collection
         received_data <<= 8; ///< Shift previous data left by 8 bits
         received_data |= USART0_readChar(); ///< Read 8 bits of received data and Append current received byte
