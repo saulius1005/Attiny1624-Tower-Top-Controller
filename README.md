@@ -1,8 +1,24 @@
 ![20250424_175854](https://github.com/user-attachments/assets/705bd36b-966e-4dae-a575-08820325abdc)
 
+
 # Attiny1624 Tower Top Controller
 
 This project is designed for the **Attiny1624** microcontroller, which communicates with an external 20 MHz clock generator (TCXO) and handles multiple sensor measurements, including solar cell voltage and current, as well as angular data from MT6701 sensors. The program also performs data validation via CRC checks and transmits the data over a communication interface. These data are then transmitted via fiber optics for further processing by the main solar tower control PCB.
+
+## Wiring Diagram
+
+### Top Controller
+![Ekrano kopija 2025-05-31 211002](https://github.com/user-attachments/assets/c2ac4786-e212-4d2e-b635-60fe1e9db97a)
+
+
+### MT6701
+![20250422_183639](https://github.com/user-attachments/assets/ade2279b-638f-4ff2-9eb6-a3d244bc13b5)
+
+![20250422_204904](https://github.com/user-attachments/assets/2519f96a-2a92-4c09-a556-c56c1a253390)
+
+
+![Ekrano kopija 2025-05-31 225943](https://github.com/user-attachments/assets/eb3429b8-2015-4977-b483-55e69ef9753c)
+
 
 ## Features
 
@@ -62,7 +78,7 @@ FIR Filtering: The level of FIR filtering applied to the voltage and current mea
 ```
 #define FIR_STEPS 20
 ```
-USART0 Baud Rate: The baud rate for USART0 communication is set to 500,000 by default, but can be modified in the ```USART.c``` file:
+USART0 Baud Rate: The baud rate for USART0 communication is set to 500,000 by default (used as the SSI interface for MT6701), but can be modified in the ```USART.c``` file:
 
 ```
 USART0.BAUD = (uint16_t)USART0_BAUD_RATE(500000);
