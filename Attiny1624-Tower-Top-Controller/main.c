@@ -36,11 +36,15 @@ int main(void)
 		FIR(Voltage); //comment if using ReadSolarCells(Voltage);
 		FIR(Current); //comment if using ReadSolarCells(Current);
 		uint8_t y = YEndSwitches();
+
+		Swap_Angle_Direction(Azimuth_Angle); // Change angle direction
+		Swap_Angle_Direction(Elevation_Angle); // change angle direction
+
 		uint8_t crc8 = crc8_cdma2000(((uint64_t)MT6701ELEVATION.Angle << 44) | ((uint64_t)MT6701AZIMUTH.Angle << 28) | ((uint64_t)ReadVoltage.Result << 16) | ((uint32_t)ReadCurrent.Result << 4) | y);
 
 		        // Send the combined data over USART0 in a formatted string
 		        USART1_printf("<%04x%04x%03x%03x%x%02x>\r\n",
-		        (uint16_t)MT6701ELEVATION.Angle,           ///< Elevation angle (4 digits)
+		        (uint16_t)MT6701ELEVATION.Angle,           ///< Elevation angle (4 digits) with changed direction
 		        (uint16_t)MT6701AZIMUTH.Angle,           ///< Azimuth angle (4 digits)
 		        (uint16_t)ReadVoltage.Result,           ///< Voltage (3 digits)
 		        (uint16_t)ReadCurrent.Result,            ///< Current (3 digits)

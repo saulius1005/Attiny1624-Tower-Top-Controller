@@ -89,4 +89,6 @@ void ReadSolarCells(solarrcells_t channel);
 
 void FIR(solarrcells_t channel);
 
+void Swap_Angle_Direction (angleChannel_t channel);
+
 #endif /* SETTINGS_H_ */

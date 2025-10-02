@@ -36,3 +36,8 @@ void MT6701_SSI_Angle(angleChannel_t channel) {
 	    sensor->TrackStatus = (received_data >> 3) & 0x1;  // Extract track status
 	    sensor->Angle = ((double)(received_data >> 4) / 0.4551111111)+0.5;  // Compute angle in degrees
 }
+
+void Swap_Angle_Direction (angleChannel_t channel){
+	AngleSensorStatus *sensor = (channel == Elevation_Angle) ? &MT6701ELEVATION : &MT6701AZIMUTH;
+	sensor->Angle = 36000-sensor->Angle;
+}

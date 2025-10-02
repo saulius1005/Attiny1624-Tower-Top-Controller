@@ -29,7 +29,7 @@
  *   - 1: CRC error detected
  */
 AngleSensorStatus MT6701ELEVATION = {
-    .Angle = 0.0,
+    .Angle = 0,
     .MagneticFieldStatus = 0,
     .PushButtonStatus = 0,
     .TrackStatus = 0,
@@ -37,7 +37,7 @@ AngleSensorStatus MT6701ELEVATION = {
 };
 
 AngleSensorStatus MT6701AZIMUTH = {
-	.Angle = 0.0,
+	.Angle = 0,
 	.MagneticFieldStatus = 0,
 	.PushButtonStatus = 0,
 	.TrackStatus = 0,
